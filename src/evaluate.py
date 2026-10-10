@@ -9,7 +9,8 @@ evaluate.py
 사용법:
     python src/evaluate.py --name base
     python src/evaluate.py --name sft --adapter outputs/qwen2.5-1.5b-legal-lora
-    python src/evaluate.py --report base sft        # results/results.md 생성
+    python src/evaluate.py --name dpo --merge_adapter outputs/qwen2.5-1.5b-legal-lora --adapter outputs/qwen2.5-1.5b-legal-dpo-lora
+    python src/evaluate.py --report base sft dpo    # results/results.md 생성
     python src/evaluate.py --rescore base sft       # 저장된 출력을 현재 파서로 재채점
     python src/evaluate.py --citations base sft     # 출력 속 사건번호·조문 실재 여부(인용 환각률)
 """
@@ -38,6 +39,9 @@ def run(args):
         model = AutoModelForCausalLM.from_pretrained(args.model, dtype=torch.float16, device_map="auto")
     except TypeError:
         model = AutoModelForCausalLM.from_pretrained(args.model, torch_dtype=torch.float16, device_map="auto")
+    if args.merge_adapter:  # 예: DPO 평가 시 SFT 어댑터를 먼저 병합
+        from peft import PeftModel
+        model = PeftModel.from_pretrained(model, args.merge_adapter).merge_and_unload()
     if args.adapter:
         from peft import PeftModel
         model = PeftModel.from_pretrained(model, args.adapter)
@@ -68,6 +72,7 @@ def run(args):
     metrics = summarize(preds)
     metrics["model"] = args.model
     metrics["adapter"] = args.adapter
+    metrics["merge_adapter"] = args.merge_adapter
     (RES / f"metrics_{args.name}.json").write_text(json.dumps(metrics, ensure_ascii=False, indent=1), encoding="utf-8")
     print(json.dumps(metrics, ensure_ascii=False, indent=1))
 
@@ -174,6 +179,7 @@ def main():
     ap.add_argument("--name")
     ap.add_argument("--model", default="Qwen/Qwen2.5-1.5B-Instruct")
     ap.add_argument("--adapter", default=None)
+    ap.add_argument("--merge_adapter", default=None, help="adapter 적용 전에 먼저 병합할 어댑터(SFT)")
     ap.add_argument("--data", default=str(ROOT / "data/eval_set.jsonl"))
     ap.add_argument("--bs", type=int, default=8)
     ap.add_argument("--max_new_tokens", type=int, default=512)
