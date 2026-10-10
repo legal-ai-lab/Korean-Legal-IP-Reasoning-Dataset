@@ -1,0 +1,8 @@
+requests>=2.31
+# 학습·평가 (Colab에는 torch/transformers/accelerate가 기본 설치되어 있음)
+torch>=2.1
+transformers>=4.44
+accelerate>=0.33
+peft>=0.12
+# 재현용 생성 스크립트
+anthropic>=0.40
