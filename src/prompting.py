@@ -11,9 +11,9 @@ _OX = {"O": "O", "X": "X", "○": "O", "×": "X", "o": "O", "x": "X"}
 def parse_ox(text: str) -> tuple[str | None, bool]:
     """모델 출력에서 O/X 정답을 추출한다. (정답, 삼단논법 형식 준수 여부)"""
     fmt_ok = all(tag in text for tag in ("[대전제]", "[소전제]", "[결론]"))
-    m = re.search(r"\[결론\]\s*[:：]?\s*\**\s*([OX○×])(?![A-Za-z])", text)
+    m = re.search(r"\[결론\]\s*[-–—:：]?\s*\**\s*([OX○×])(?![A-Za-z])", text)
     if not m:
-        m = re.search(r"(?:정답|결론|답)\s*(?:은|는|:|：)?\s*\**\s*[\"'“]?([OX○×])(?![A-Za-z])", text)
+        m = re.search(r"(?:정답|결론|답)\s*(?:은|는|:|：|-)?\s*\**\s*[\"'“]?([OX○×])(?![A-Za-z])", text)
     if m:
         return _OX[m.group(1)], fmt_ok
     head = text[:300]

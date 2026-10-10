@@ -33,9 +33,9 @@ def load_model(name: str):
 
 
 def encode(tok, row, max_len):
-    prompt_ids = tok.apply_chat_template(build_messages(row["instruction"]), add_generation_prompt=True, tokenize=True)
-    if isinstance(prompt_ids, dict):
-        prompt_ids = prompt_ids["input_ids"]
+    # 버전에 따라 tokenize=True의 반환형이 달라지므로(list / BatchEncoding) 문자열로 받은 뒤 토큰화
+    prompt_text = tok.apply_chat_template(build_messages(row["instruction"]), add_generation_prompt=True, tokenize=False)
+    prompt_ids = tok(prompt_text, add_special_tokens=False)["input_ids"]
     answer_ids = tok(row["output"] + tok.eos_token, add_special_tokens=False)["input_ids"]
     ids = (prompt_ids + answer_ids)[:max_len]
     labels = ([-100] * len(prompt_ids) + answer_ids)[:max_len]

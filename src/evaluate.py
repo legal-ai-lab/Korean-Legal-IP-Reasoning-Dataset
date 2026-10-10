@@ -10,6 +10,8 @@ evaluate.py
     python src/evaluate.py --name base
     python src/evaluate.py --name sft --adapter outputs/qwen2.5-1.5b-legal-lora
     python src/evaluate.py --report base sft        # results/results.md 생성
+    python src/evaluate.py --rescore base sft       # 저장된 출력을 현재 파서로 재채점
+    python src/evaluate.py --citations base sft     # 출력 속 사건번호·조문 실재 여부(인용 환각률)
 """
 import argparse
 import json
@@ -88,6 +90,66 @@ def summarize(preds):
     }
 
 
+def rescore(names):
+    """저장된 predictions_{name}.jsonl의 출력 원문을 현재 파서로 다시 채점한다(모델 재실행 불필요)."""
+    for n in names:
+        p = RES / f"predictions_{n}.jsonl"
+        preds = [json.loads(l) for l in open(p, encoding="utf-8")]
+        for x in preds:
+            x["pred"], x["format_ok"] = parse_ox(x["output"])
+            x["correct"] = x["pred"] == x["answer"]
+        with open(p, "w", encoding="utf-8") as f:
+            for x in preds:
+                f.write(json.dumps(x, ensure_ascii=False) + "\n")
+        old = json.loads((RES / f"metrics_{n}.json").read_text(encoding="utf-8"))
+        m = summarize(preds)
+        m["model"], m["adapter"] = old.get("model"), old.get("adapter")
+        (RES / f"metrics_{n}.json").write_text(json.dumps(m, ensure_ascii=False, indent=1), encoding="utf-8")
+        print(n, m["overall"], "parse_fail", m["parse_fail"], m["pred_dist"])
+
+
+def citations(names):
+    """출력 속 인용(사건번호·조문)이 실제로 존재하는지 검사한다.
+    - 사건번호: data/raw/precedents.jsonl 또는 판례 변경 목록에 없으면 '가공(환각)'
+    - 조문: '○○법 제N조 제N항' 인용이 statutes.jsonl에 없거나 해당 항이 없으면 '가공(환각)'
+    - 근거 일치: 평가 문항의 정답 근거(사건번호)를 출력이 인용했는지
+    """
+    import re
+    raw = ROOT / "data/raw"
+    statutes = {(r["law_name"], r["article_no"]): r["text"] for r in map(json.loads, open(raw / "statutes.jsonl", encoding="utf-8"))}
+    cases = {json.loads(l)["case_no"].split(",")[0].strip() for l in open(raw / "precedents.jsonl", encoding="utf-8")}
+    cases |= {c for l in open(raw / "dpo_seeds.jsonl", encoding="utf-8") for c in json.loads(l)["overruled_cases"]}
+    gold = {r["id"]: {s["case_no"] for s in r["sources"] if s["type"] == "precedent"}
+            for r in map(json.loads, open(ROOT / "data/eval_set.jsonl", encoding="utf-8"))}
+    case_re = re.compile(r"(?<![\d가-힣])((?:19|20)?\d{2}(?:후|허|다|두|도|마|누|그|므|스)\d{1,6})(?!\d)")
+    art_re = re.compile(r"(특허법|상표법|민법)\s*(제\d+조(?:의\d+)?)(?:\s*제(\d+)항)?")
+    circ = "①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮"
+    out = {}
+    for n in names:
+        P = [json.loads(l) for l in open(RES / f"predictions_{n}.jsonl", encoding="utf-8")]
+        c_tot = c_fake = a_tot = a_fake = with_case = gold_hit = gold_n = 0
+        for p in P:
+            cs = set(case_re.findall(p["output"]))
+            with_case += bool(cs)
+            c_tot += len(cs); c_fake += sum(c not in cases for c in cs)
+            for law, art, hang in set(art_re.findall(p["output"])):
+                a_tot += 1
+                t = statutes.get((law, art))
+                bad_hang = bool(hang) and (int(hang) > len(circ) or circ[int(hang) - 1] not in t) if t else False
+                if t is None or bad_hang:
+                    a_fake += 1
+            if gold[p["id"]]:
+                gold_n += 1; gold_hit += bool(gold[p["id"]] & cs)
+        out[n] = {"responses_citing_case": with_case, "cited_cases": c_tot, "fabricated_cases": c_fake,
+                  "fabricated_case_rate": round(100 * c_fake / c_tot, 1) if c_tot else None,
+                  "cited_articles": a_tot, "fabricated_articles": a_fake,
+                  "fabricated_article_rate": round(100 * a_fake / a_tot, 1) if a_tot else None,
+                  "gold_case_cited": f"{gold_hit}/{gold_n}"}
+    (RES / "citation_check.json").write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
+    print(json.dumps(out, ensure_ascii=False, indent=1))
+    return out
+
+
 def report(names):
     ms = {n: json.loads((RES / f"metrics_{n}.json").read_text(encoding="utf-8")) for n in names}
     head = "| 구분 | n | " + " | ".join(names) + " |\n|---|---:|" + "---:|" * len(names) + "\n"
@@ -116,8 +178,14 @@ def main():
     ap.add_argument("--bs", type=int, default=8)
     ap.add_argument("--max_new_tokens", type=int, default=512)
     ap.add_argument("--report", nargs="+")
+    ap.add_argument("--rescore", nargs="+")
+    ap.add_argument("--citations", nargs="+")
     args = ap.parse_args()
-    if args.report:
+    if args.rescore:
+        rescore(args.rescore)
+    elif args.citations:
+        citations(args.citations)
+    elif args.report:
         report(args.report)
     else:
         run(args)
