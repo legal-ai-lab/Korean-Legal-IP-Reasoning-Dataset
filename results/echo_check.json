@@ -1,6 +1,9 @@
 {
- "echo_premise": 25,
+ "echo_premise": 28,
  "n": 60,
- "echo_pred_O": 23,
- "echo_correct": 14
+ "echo_pred_O": 26,
+ "echo_correct": 18,
+ "art103_citations": 36,
+ "art_citations": 56,
+ "responses_with_103_2": 37
 }

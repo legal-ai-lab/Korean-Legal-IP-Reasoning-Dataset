@@ -45,5 +45,6 @@
   "X": 0
  },
  "model": "Qwen/Qwen2.5-1.5B-Instruct",
- "adapter": null
+ "adapter": null,
+ "merge_adapter": null
 }

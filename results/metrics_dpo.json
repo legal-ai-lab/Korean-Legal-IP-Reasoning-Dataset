@@ -1,0 +1,50 @@
+{
+ "overall": {
+  "n": 60,
+  "correct": 27,
+  "acc": 45.0
+ },
+ "by_category": {
+  "standard": {
+   "n": 40,
+   "correct": 20,
+   "acc": 50.0
+  },
+  "rule_precedent_exception": {
+   "n": 10,
+   "correct": 5,
+   "acc": 50.0
+  },
+  "precedent_conflict": {
+   "n": 10,
+   "correct": 2,
+   "acc": 20.0
+  }
+ },
+ "by_law": {
+  "특허법": {
+   "n": 28,
+   "correct": 12,
+   "acc": 42.9
+  },
+  "상표법": {
+   "n": 23,
+   "correct": 12,
+   "acc": 52.2
+  },
+  "민법": {
+   "n": 9,
+   "correct": 3,
+   "acc": 33.3
+  }
+ },
+ "format_compliance": 88.3,
+ "parse_fail": 7,
+ "pred_dist": {
+  "O": 33,
+  "X": 20
+ },
+ "model": "Qwen/Qwen2.5-1.5B-Instruct",
+ "adapter": "outputs/qwen2.5-1.5b-legal-dpo-lora",
+ "merge_adapter": "outputs/qwen2.5-1.5b-legal-lora"
+}

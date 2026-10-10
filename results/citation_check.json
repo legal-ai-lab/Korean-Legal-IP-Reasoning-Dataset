@@ -10,13 +10,23 @@
   "gold_case_cited": "0/34"
  },
  "sft": {
-  "responses_citing_case": 18,
-  "cited_cases": 18,
-  "fabricated_cases": 18,
+  "responses_citing_case": 19,
+  "cited_cases": 19,
+  "fabricated_cases": 19,
   "fabricated_case_rate": 100.0,
   "cited_articles": 56,
   "fabricated_articles": 45,
   "fabricated_article_rate": 80.4,
+  "gold_case_cited": "0/34"
+ },
+ "dpo": {
+  "responses_citing_case": 45,
+  "cited_cases": 45,
+  "fabricated_cases": 45,
+  "fabricated_case_rate": 100.0,
+  "cited_articles": 59,
+  "fabricated_articles": 50,
+  "fabricated_article_rate": 84.7,
   "gold_case_cited": "0/34"
  }
 }

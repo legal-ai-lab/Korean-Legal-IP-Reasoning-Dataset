@@ -41,9 +41,10 @@
  "format_compliance": 98.3,
  "parse_fail": 1,
  "pred_dist": {
-  "O": 49,
-  "X": 10
+  "O": 51,
+  "X": 8
  },
  "model": "Qwen/Qwen2.5-1.5B-Instruct",
- "adapter": "outputs/qwen2.5-1.5b-legal-lora"
+ "adapter": "outputs/qwen2.5-1.5b-legal-lora",
+ "merge_adapter": null
 }
