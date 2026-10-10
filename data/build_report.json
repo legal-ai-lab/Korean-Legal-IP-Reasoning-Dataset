@@ -1,0 +1,81 @@
+{
+ "sft": {
+  "precedent_conflict": {
+   "n": 12,
+   "pct": 5.9
+  },
+  "rule_precedent_exception": {
+   "n": 31,
+   "pct": 15.3
+  },
+  "standard": {
+   "n": 160,
+   "pct": 78.8
+  },
+  "total": 203,
+  "by_law": {
+   "특허법": 100,
+   "상표법": 60,
+   "민법": 43
+  },
+  "by_task": {
+   "ox": 185,
+   "qa": 18
+  },
+  "ox_answer": {
+   "O": 101,
+   "X": 84
+  }
+ },
+ "dpo": {
+  "precedent_conflict": {
+   "n": 34,
+   "pct": 77.3
+  },
+  "rule_precedent_exception": {
+   "n": 10,
+   "pct": 22.7
+  },
+  "standard": {
+   "n": 0,
+   "pct": 0.0
+  },
+  "total": 44,
+  "cases": 20
+ },
+ "eval": {
+  "precedent_conflict": {
+   "n": 10,
+   "pct": 16.7
+  },
+  "rule_precedent_exception": {
+   "n": 10,
+   "pct": 16.7
+  },
+  "standard": {
+   "n": 40,
+   "pct": 66.7
+  },
+  "total": 60,
+  "by_law": {
+   "특허법": 28,
+   "상표법": 23,
+   "민법": 9
+  },
+  "answer": {
+   "X": 28,
+   "O": 32
+  }
+ },
+ "leak_check": {
+  "case_overlap": [],
+  "statute_overlap": [],
+  "duplicate_statements": []
+ },
+ "checks": {
+  "statute_quotes_verbatim_from_api": true,
+  "case_numbers_verified_against_raw": true,
+  "conflict_cases_verified_by_overrule_sentence": true
+ },
+ "errors": []
+}
