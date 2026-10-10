@@ -1,0 +1,49 @@
+{
+ "overall": {
+  "n": 60,
+  "correct": 31,
+  "acc": 51.7
+ },
+ "by_category": {
+  "standard": {
+   "n": 40,
+   "correct": 22,
+   "acc": 55.0
+  },
+  "rule_precedent_exception": {
+   "n": 10,
+   "correct": 5,
+   "acc": 50.0
+  },
+  "precedent_conflict": {
+   "n": 10,
+   "correct": 4,
+   "acc": 40.0
+  }
+ },
+ "by_law": {
+  "특허법": {
+   "n": 28,
+   "correct": 14,
+   "acc": 50.0
+  },
+  "상표법": {
+   "n": 23,
+   "correct": 13,
+   "acc": 56.5
+  },
+  "민법": {
+   "n": 9,
+   "correct": 4,
+   "acc": 44.4
+  }
+ },
+ "format_compliance": 8.3,
+ "parse_fail": 2,
+ "pred_dist": {
+  "O": 58,
+  "X": 0
+ },
+ "model": "Qwen/Qwen2.5-1.5B-Instruct",
+ "adapter": null
+}
