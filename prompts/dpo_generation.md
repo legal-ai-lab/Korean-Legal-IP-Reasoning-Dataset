@@ -7,7 +7,7 @@
   (`case_no`, `decision_date`, `summary`, `overrule_sentence`, `overruled_cases`)
 - `{OLD_CASE}`: `overruled_cases` 중 1건과 그 선고일(변경 선언 문장에 기재된 것만 사용)
 
-## 프롬프트 A — Precedent Conflict
+## 프롬프트 A: Precedent Conflict
 ```
 아래 전원합의체 판결과 그 판결로 변경된 종전 판례를 근거로 DPO 쌍 3개를 만드시오.
 
@@ -21,7 +21,7 @@
 - prompt: 직접 질문 1개, 사례형 1개, OX 판단형 1개.
 - chosen: 현재 판례를 [대전제]로 한 삼단논법. 판례가 변경되었다는 사실을 포함한다.
 - rejected: 종전 판례를 [대전제]로 하여 자신 있게 결론 내리는 답변. "종전", "변경 전" 같은
-  표지를 붙이지 않는다(모델이 표지만 보고 구별하는 지름길을 막기 위함).
+  문구를 붙이지 않는다(모델이 문구만 보고 구별하는 것을 막기 위함).
 - chosen과 rejected는 형식·길이를 비슷하게 맞추고, 차이는 적용한 판례와 결론에만 둔다.
 - 사건번호는 위 두 판례 외에는 쓰지 않는다.
 
@@ -30,7 +30,7 @@
  "prompt": "...", "chosen": "...", "rejected": "..."}
 ```
 
-## 프롬프트 B — Rule-Precedent Exception
+## 프롬프트 B: Rule-Precedent Exception
 ```
 아래 조문과 판례를 근거로, 조문 문언만 기계적으로 적용한 답(rejected)과
 판례 해석을 반영한 답(chosen)으로 구성된 DPO 쌍 1개를 만드시오.
