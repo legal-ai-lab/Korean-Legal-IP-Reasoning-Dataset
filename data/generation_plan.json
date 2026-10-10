@@ -1,0 +1,1990 @@
+{
+ "sft": [
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제2조 제1호"
+   ],
+   "n": 2
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제2조 제3호"
+   ],
+   "n": 3
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제29조 제1항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제29조 제1항 제2호"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제29조 제2항"
+   ],
+   "n": 2
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제29조 제3항"
+   ],
+   "n": 2
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제30조 제1항"
+   ],
+   "n": 2
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제30조 제1항 제2호"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제30조 제1항 제1호"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제30조 제2항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제32조"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제33조 제1항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제33조 제2항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제44조"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제34조"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제47조 제1항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제47조 제2항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제47조 제3항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제52조 제1항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제52조 제2항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제53조 제4항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제89조 제1항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제94조 제1항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제96조 제1항 제1호"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제96조 제1항 제2호"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제96조 제1항 제3호"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제96조 제2항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제97조"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제98조"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제99조의2 제1항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제100조 제3항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제100조 제4항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제126조 제1항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제126조 제2항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제127조"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제128조 제4항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제128조 제8항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제130조"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제132조 제3항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제133조 제2항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제133조 제3항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제133조 제1항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제135조 제2항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제136조 제2항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제139조 제2항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제163조"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "상표법",
+   "sources": [
+    "상표법 제2조 제1항 제1호"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "상표법",
+   "sources": [
+    "상표법 제2조 제1항 제2호"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "상표법",
+   "sources": [
+    "상표법 제2조 제1항 제11호"
+   ],
+   "n": 2
+  },
+  {
+   "category": "standard",
+   "law": "상표법",
+   "sources": [
+    "상표법 제33조 제2항"
+   ],
+   "n": 2
+  },
+  {
+   "category": "standard",
+   "law": "상표법",
+   "sources": [
+    "상표법 제33조 제1항 제3호"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "상표법",
+   "sources": [
+    "상표법 제33조 제1항 제5호"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "상표법",
+   "sources": [
+    "상표법 제34조 제1항 제6호"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "상표법",
+   "sources": [
+    "상표법 제34조 제1항 제7호"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "상표법",
+   "sources": [
+    "상표법 제34조 제1항 제4호"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "상표법",
+   "sources": [
+    "상표법 제89조"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "상표법",
+   "sources": [
+    "상표법 제90조 제1항 제1호"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "상표법",
+   "sources": [
+    "상표법 제90조 제3항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "상표법",
+   "sources": [
+    "상표법 제90조 제1항 제2호"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "상표법",
+   "sources": [
+    "상표법 제92조 제1항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "상표법",
+   "sources": [
+    "상표법 제95조 제2항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "상표법",
+   "sources": [
+    "상표법 제95조 제4항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "상표법",
+   "sources": [
+    "상표법 제95조 제6항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "상표법",
+   "sources": [
+    "상표법 제96조 제1항 제1호"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "상표법",
+   "sources": [
+    "상표법 제97조 제3항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "상표법",
+   "sources": [
+    "상표법 제100조 제1항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "상표법",
+   "sources": [
+    "상표법 제108조 제1항 제1호"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "상표법",
+   "sources": [
+    "상표법 제108조 제1항 제4호"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "상표법",
+   "sources": [
+    "상표법 제109조"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "상표법",
+   "sources": [
+    "상표법 제117조 제1항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "상표법",
+   "sources": [
+    "상표법 제117조 제1항 제6호"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "상표법",
+   "sources": [
+    "상표법 제119조 제1항 제3호"
+   ],
+   "n": 2
+  },
+  {
+   "category": "standard",
+   "law": "상표법",
+   "sources": [
+    "상표법 제119조 제1항 제2호"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "상표법",
+   "sources": [
+    "상표법 제119조 제1항 제1호"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "상표법",
+   "sources": [
+    "상표법 제121조"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "상표법",
+   "sources": [
+    "상표법 제160조"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "민법",
+   "sources": [
+    "민법 제2조"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "민법",
+   "sources": [
+    "민법 제103조"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "민법",
+   "sources": [
+    "민법 제105조"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "민법",
+   "sources": [
+    "민법 제107조 제1항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "민법",
+   "sources": [
+    "민법 제109조 제1항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "민법",
+   "sources": [
+    "민법 제109조 제2항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "민법",
+   "sources": [
+    "민법 제111조 제1항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "민법",
+   "sources": [
+    "민법 제111조 제2항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "민법",
+   "sources": [
+    "민법 제137조"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "민법",
+   "sources": [
+    "민법 제141조"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "민법",
+   "sources": [
+    "민법 제162조"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "민법",
+   "sources": [
+    "민법 제162조 제2항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "민법",
+   "sources": [
+    "민법 제166조 제1항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "민법",
+   "sources": [
+    "민법 제387조 제2항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "민법",
+   "sources": [
+    "민법 제390조"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "민법",
+   "sources": [
+    "민법 제393조 제2항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "민법",
+   "sources": [
+    "민법 제544조"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "민법",
+   "sources": [
+    "민법 제741조"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "민법",
+   "sources": [
+    "민법 제746조"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "민법",
+   "sources": [
+    "민법 제750조"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "민법",
+   "sources": [
+    "민법 제751조 제1항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "민법",
+   "sources": [
+    "민법 제756조 제1항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "민법",
+   "sources": [
+    "민법 제756조 제3항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "민법",
+   "sources": [
+    "민법 제763조"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "민법",
+   "sources": [
+    "민법 제766조 제1항",
+    "민법 제766조 제2항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "민법",
+   "sources": [
+    "민법 제766조 제2항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제42조 제3항 제1호",
+    "2020후10292"
+   ],
+   "n": 2
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제42조 제3항 제1호",
+    "2017후1298"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제29조 제2항",
+    "2018후10923"
+   ],
+   "n": 2
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제133조 제1항 제2호",
+    "2019후11268"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제33조 제1항",
+    "2019후11268"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제133조 제1항",
+    "2022후10814"
+   ],
+   "n": 2
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제126조 제1항",
+    "2025마6304"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "2025마6304"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제136조 제4항",
+    "2023후11487"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제97조",
+    "2023후11487"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제98조",
+    "2019다222782"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제102조 제1항",
+    "2023다280358"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "민법 제387조 제2항",
+    "2023다287168"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "2021다258463"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "2003다47218"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제89조 제1항",
+    "2021후11070"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "상표법",
+   "sources": [
+    "2015후789"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "상표법",
+   "sources": [
+    "상표법 제33조 제1항 제4호",
+    "2017후1342"
+   ],
+   "n": 2
+  },
+  {
+   "category": "standard",
+   "law": "상표법",
+   "sources": [
+    "상표법 제33조 제1항 제4호",
+    "2023후10453"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "상표법",
+   "sources": [
+    "상표법 제33조 제2항",
+    "2023후10453"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "상표법",
+   "sources": [
+    "2023후11180"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "상표법",
+   "sources": [
+    "2017후2208"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "상표법",
+   "sources": [
+    "2018후10848"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "상표법",
+   "sources": [
+    "상표법 제2조 제1항 제11호",
+    "2022후10265"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "상표법",
+   "sources": [
+    "상표법 제34조 제1항 제13호",
+    "2020후11622"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "상표법",
+   "sources": [
+    "상표법 제33조 제1항 제3호",
+    "2022후10128"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "상표법",
+   "sources": [
+    "상표법 제33조 제1항 제3호",
+    "2016후526"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "상표법",
+   "sources": [
+    "상표법 제34조 제1항 제11호",
+    "2019후11787"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "상표법",
+   "sources": [
+    "상표법 제119조 제1항 제3호",
+    "2024후10504"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "상표법",
+   "sources": [
+    "상표법 제108조 제1항 제1호",
+    "2023후10118"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "상표법",
+   "sources": [
+    "상표법 제100조 제1항",
+    "2024다306691"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "민법",
+   "sources": [
+    "민법 제105조",
+    "2025다211003"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "민법",
+   "sources": [
+    "2025다211003"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "민법",
+   "sources": [
+    "민법 제756조 제1항",
+    "2025다219520"
+   ],
+   "n": 2
+  },
+  {
+   "category": "standard",
+   "law": "민법",
+   "sources": [
+    "2025다207326"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "민법",
+   "sources": [
+    "2026다202857"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "민법",
+   "sources": [
+    "2026다202594"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "민법",
+   "sources": [
+    "2026다201325"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "민법",
+   "sources": [
+    "2026다202468"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "민법",
+   "sources": [
+    "2024다294033"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "민법",
+   "sources": [
+    "2023다217428"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "민법",
+   "sources": [
+    "민법 제750조",
+    "2018다221676"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제42조 제3항 제1호"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "민법",
+   "sources": [
+    "민법 제536조 제2항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "rule_precedent_exception",
+   "law": "특허법",
+   "sources": [
+    "특허법 제133조 제3항",
+    "2010다95390"
+   ],
+   "n": 2
+  },
+  {
+   "category": "rule_precedent_exception",
+   "law": "특허법",
+   "sources": [
+    "특허법 제97조",
+    "81후56"
+   ],
+   "n": 1
+  },
+  {
+   "category": "rule_precedent_exception",
+   "law": "특허법",
+   "sources": [
+    "특허법 제135조 제2항",
+    "2012후4162"
+   ],
+   "n": 1
+  },
+  {
+   "category": "rule_precedent_exception",
+   "law": "특허법",
+   "sources": [
+    "특허법 제135조 제1항",
+    "2012후4162"
+   ],
+   "n": 1
+  },
+  {
+   "category": "rule_precedent_exception",
+   "law": "특허법",
+   "sources": [
+    "특허법 제127조 제2호",
+    "2017다290095"
+   ],
+   "n": 2
+  },
+  {
+   "category": "rule_precedent_exception",
+   "law": "특허법",
+   "sources": [
+    "특허법 제133조 제3항",
+    "2018다287362"
+   ],
+   "n": 2
+  },
+  {
+   "category": "rule_precedent_exception",
+   "law": "상표법",
+   "sources": [
+    "상표법 제117조 제3항",
+    "99후925"
+   ],
+   "n": 1
+  },
+  {
+   "category": "rule_precedent_exception",
+   "law": "특허법",
+   "sources": [
+    "특허법 제30조 제1항",
+    "2023후10712"
+   ],
+   "n": 2
+  },
+  {
+   "category": "rule_precedent_exception",
+   "law": "특허법",
+   "sources": [
+    "특허법 제97조",
+    "2023후11340"
+   ],
+   "n": 2
+  },
+  {
+   "category": "rule_precedent_exception",
+   "law": "특허법",
+   "sources": [
+    "특허법 제94조 제1항",
+    "2019다222782"
+   ],
+   "n": 1
+  },
+  {
+   "category": "rule_precedent_exception",
+   "law": "특허법",
+   "sources": [
+    "특허법 제94조 제1항",
+    "2025다202970"
+   ],
+   "n": 1
+  },
+  {
+   "category": "rule_precedent_exception",
+   "law": "민법",
+   "sources": [
+    "민법 제746조",
+    "2024다292464"
+   ],
+   "n": 2
+  },
+  {
+   "category": "rule_precedent_exception",
+   "law": "상표법",
+   "sources": [
+    "상표법 제117조 제3항",
+    "2010다103000"
+   ],
+   "n": 1
+  },
+  {
+   "category": "rule_precedent_exception",
+   "law": "상표법",
+   "sources": [
+    "상표법 제89조",
+    "2018다253444"
+   ],
+   "n": 1
+  },
+  {
+   "category": "rule_precedent_exception",
+   "law": "특허법",
+   "sources": [
+    "특허법 제99조의2 제1항",
+    "2012다11310"
+   ],
+   "n": 1
+  },
+  {
+   "category": "rule_precedent_exception",
+   "law": "특허법",
+   "sources": [
+    "특허법 제30조 제3항",
+    "2010후2353"
+   ],
+   "n": 1
+  },
+  {
+   "category": "rule_precedent_exception",
+   "law": "민법",
+   "sources": [
+    "민법 제2조",
+    "2025다210092"
+   ],
+   "n": 1
+  },
+  {
+   "category": "rule_precedent_exception",
+   "law": "민법",
+   "sources": [
+    "민법 제746조",
+    "2024므13669"
+   ],
+   "n": 1
+  },
+  {
+   "category": "rule_precedent_exception",
+   "law": "특허법",
+   "sources": [
+    "특허법 제2조 제3호",
+    "2017다289903"
+   ],
+   "n": 2
+  },
+  {
+   "category": "rule_precedent_exception",
+   "law": "상표법",
+   "sources": [
+    "상표법 제97조 제2항",
+    "2018도14446"
+   ],
+   "n": 1
+  },
+  {
+   "category": "rule_precedent_exception",
+   "law": "상표법",
+   "sources": [
+    "상표법 제96조 제1항 제1호",
+    "2023도11044"
+   ],
+   "n": 1
+  },
+  {
+   "category": "rule_precedent_exception",
+   "law": "상표법",
+   "sources": [
+    "상표법 제33조 제1항 제4호",
+    "2015후1454"
+   ],
+   "n": 2
+  },
+  {
+   "category": "rule_precedent_exception",
+   "law": "특허법",
+   "sources": [
+    "특허법 제130조",
+    "2003다15006"
+   ],
+   "n": 1
+  },
+  {
+   "category": "precedent_conflict",
+   "law": "상표법",
+   "sources": [
+    "상표법 제119조 제1항 제1호",
+    "2002후1225"
+   ],
+   "n": 1
+  },
+  {
+   "category": "precedent_conflict",
+   "law": "특허법",
+   "sources": [
+    "특허법 제163조",
+    "2009후2234"
+   ],
+   "n": 1
+  },
+  {
+   "category": "precedent_conflict",
+   "law": "상표법",
+   "sources": [
+    "상표법 제117조 제3항",
+    "2010다103000"
+   ],
+   "n": 1
+  },
+  {
+   "category": "precedent_conflict",
+   "law": "특허법",
+   "sources": [
+    "특허법 제133조 제3항",
+    "2010다95390"
+   ],
+   "n": 1
+  },
+  {
+   "category": "precedent_conflict",
+   "law": "상표법",
+   "sources": [
+    "상표법 제33조 제1항 제3호",
+    "2010후2339"
+   ],
+   "n": 1
+  },
+  {
+   "category": "precedent_conflict",
+   "law": "특허법",
+   "sources": [
+    "특허법 제2조 제3호",
+    "2011후927"
+   ],
+   "n": 1
+  },
+  {
+   "category": "precedent_conflict",
+   "law": "특허법",
+   "sources": [
+    "특허법 제135조 제1항",
+    "2012후4162"
+   ],
+   "n": 1
+  },
+  {
+   "category": "precedent_conflict",
+   "law": "특허법",
+   "sources": [
+    "특허법 제29조 제1항",
+    "2014후768"
+   ],
+   "n": 1
+  },
+  {
+   "category": "precedent_conflict",
+   "law": "특허법",
+   "sources": [
+    "특허법 제136조 제1항",
+    "2016후2522"
+   ],
+   "n": 1
+  },
+  {
+   "category": "precedent_conflict",
+   "law": "상표법",
+   "sources": [
+    "상표법 제89조",
+    "2018다253444"
+   ],
+   "n": 1
+  },
+  {
+   "category": "precedent_conflict",
+   "law": "특허법",
+   "sources": [
+    "2021두59908"
+   ],
+   "n": 2
+  }
+ ],
+ "dpo": [
+  {
+   "category": "precedent_conflict",
+   "law": "특허법",
+   "case_no": "2021두59908",
+   "n": 4
+  },
+  {
+   "category": "precedent_conflict",
+   "law": "특허법",
+   "case_no": "2009후2234",
+   "n": 3
+  },
+  {
+   "category": "precedent_conflict",
+   "law": "상표법",
+   "case_no": "2010다103000",
+   "n": 3
+  },
+  {
+   "category": "precedent_conflict",
+   "law": "특허법",
+   "case_no": "2010다95390",
+   "n": 3
+  },
+  {
+   "category": "precedent_conflict",
+   "law": "상표법",
+   "case_no": "2010후2339",
+   "n": 3
+  },
+  {
+   "category": "precedent_conflict",
+   "law": "특허법",
+   "case_no": "2011후927",
+   "n": 3
+  },
+  {
+   "category": "precedent_conflict",
+   "law": "특허법",
+   "case_no": "2012후4162",
+   "n": 3
+  },
+  {
+   "category": "precedent_conflict",
+   "law": "특허법",
+   "case_no": "2014후768",
+   "n": 3
+  },
+  {
+   "category": "precedent_conflict",
+   "law": "특허법",
+   "case_no": "2016후2522",
+   "n": 3
+  },
+  {
+   "category": "precedent_conflict",
+   "law": "상표법",
+   "case_no": "2018다253444",
+   "n": 3
+  },
+  {
+   "category": "precedent_conflict",
+   "law": "상표법",
+   "case_no": "2002후1225",
+   "n": 3
+  },
+  {
+   "category": "rule_precedent_exception",
+   "law": "특허법",
+   "case_no": "2017다290095",
+   "n": 1
+  },
+  {
+   "category": "rule_precedent_exception",
+   "law": "특허법",
+   "case_no": "2018다287362",
+   "n": 1
+  },
+  {
+   "category": "rule_precedent_exception",
+   "law": "상표법",
+   "case_no": "99후925",
+   "n": 1
+  },
+  {
+   "category": "rule_precedent_exception",
+   "law": "민법",
+   "case_no": "2024다292464",
+   "n": 1
+  },
+  {
+   "category": "rule_precedent_exception",
+   "law": "특허법",
+   "case_no": "2023후10712",
+   "n": 1
+  },
+  {
+   "category": "rule_precedent_exception",
+   "law": "특허법",
+   "case_no": "2012후4162",
+   "n": 1
+  },
+  {
+   "category": "rule_precedent_exception",
+   "law": "민법",
+   "case_no": "2025다210092",
+   "n": 1
+  },
+  {
+   "category": "rule_precedent_exception",
+   "law": "특허법",
+   "case_no": "2017다289903",
+   "n": 1
+  },
+  {
+   "category": "rule_precedent_exception",
+   "law": "상표법",
+   "case_no": "2018도14446",
+   "n": 1
+  },
+  {
+   "category": "rule_precedent_exception",
+   "law": "상표법",
+   "case_no": "2015후1454",
+   "n": 1
+  }
+ ],
+ "eval": [
+  {
+   "category": "precedent_conflict",
+   "law": "특허법",
+   "sources": [
+    "2013후37"
+   ],
+   "n": 3
+  },
+  {
+   "category": "precedent_conflict",
+   "law": "특허법",
+   "sources": [
+    "2017후2819"
+   ],
+   "n": 3
+  },
+  {
+   "category": "precedent_conflict",
+   "law": "상표법",
+   "sources": [
+    "2012후2463"
+   ],
+   "n": 2
+  },
+  {
+   "category": "precedent_conflict",
+   "law": "상표법",
+   "sources": [
+    "2011후3698"
+   ],
+   "n": 2
+  },
+  {
+   "category": "rule_precedent_exception",
+   "law": "특허법",
+   "sources": [
+    "2023후11562"
+   ],
+   "n": 2
+  },
+  {
+   "category": "rule_precedent_exception",
+   "law": "상표법",
+   "sources": [
+    "2022다209079",
+    "상표법 제117조 제3항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "rule_precedent_exception",
+   "law": "상표법",
+   "sources": [
+    "2022다209079"
+   ],
+   "n": 1
+  },
+  {
+   "category": "rule_precedent_exception",
+   "law": "상표법",
+   "sources": [
+    "2024다311181"
+   ],
+   "n": 2
+  },
+  {
+   "category": "rule_precedent_exception",
+   "law": "민법",
+   "sources": [
+    "2023다285162",
+    "민법 제766조 제1항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "rule_precedent_exception",
+   "law": "민법",
+   "sources": [
+    "2023다285162"
+   ],
+   "n": 1
+  },
+  {
+   "category": "rule_precedent_exception",
+   "law": "특허법",
+   "sources": [
+    "2020후11479"
+   ],
+   "n": 2
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제36조 제1항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제36조 제2항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제36조 제4항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제37조 제2항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제37조 제3항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제88조 제1항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제88조 제2항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제99조 제3항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제99조 제4항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제99조 제2항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "특허법 제103조"
+   ],
+   "n": 2
+  },
+  {
+   "category": "standard",
+   "law": "상표법",
+   "sources": [
+    "상표법 제35조 제2항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "상표법",
+   "sources": [
+    "상표법 제35조 제1항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "상표법",
+   "sources": [
+    "상표법 제35조 제3항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "상표법",
+   "sources": [
+    "상표법 제35조 제6항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "상표법",
+   "sources": [
+    "상표법 제93조 제1항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "상표법",
+   "sources": [
+    "상표법 제93조 제4항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "상표법",
+   "sources": [
+    "상표법 제93조 제6항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "상표법",
+   "sources": [
+    "상표법 제98조 제1항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "상표법",
+   "sources": [
+    "상표법 제150조"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "민법",
+   "sources": [
+    "민법 제104조"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "민법",
+   "sources": [
+    "민법 제108조"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "민법",
+   "sources": [
+    "민법 제110조 제2항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "민법",
+   "sources": [
+    "민법 제139조"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "민법",
+   "sources": [
+    "민법 제398조 제2항",
+    "민법 제398조 제4항"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "2017후1304"
+   ],
+   "n": 2
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "2022후10210"
+   ],
+   "n": 2
+  },
+  {
+   "category": "standard",
+   "law": "특허법",
+   "sources": [
+    "2024후10825"
+   ],
+   "n": 2
+  },
+  {
+   "category": "standard",
+   "law": "상표법",
+   "sources": [
+    "2022후10289"
+   ],
+   "n": 2
+  },
+  {
+   "category": "standard",
+   "law": "상표법",
+   "sources": [
+    "2020후11943"
+   ],
+   "n": 2
+  },
+  {
+   "category": "standard",
+   "law": "상표법",
+   "sources": [
+    "2021도2180"
+   ],
+   "n": 2
+  },
+  {
+   "category": "standard",
+   "law": "민법",
+   "sources": [
+    "2025다219495"
+   ],
+   "n": 1
+  },
+  {
+   "category": "standard",
+   "law": "민법",
+   "sources": [
+    "2024다228630"
+   ],
+   "n": 1
+  }
+ ]
+}
