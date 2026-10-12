@@ -4,11 +4,12 @@
 **SFT / DPO 합성 데이터**를 구축하는 파이프라인과 평가.
 
 - SFT 203문항 · DPO 44쌍 · 평가셋 60문항 (학습 미사용, 판례 변경 문항 포함)
-- SFT → DPO 2단계 학습(Qwen2.5-1.5B-Instruct + LoRA)과 3단계(base/SFT/DPO) 비교
+- SFT → DPO 2단계 학습(Qwen2.5-1.5B-Instruct + LoRA)과 3단계(base/SFT/DPO) 비교, 형식 단서를 제거한 DPO v1.1 재실험
 - 모든 사건번호·조문번호는 원천 데이터와 자동 대조(존재하지 않으면 빌드 실패)
 - SFT: 삼단논법 형식 준수율 **8.3% → 98.3%**, 정답률 51.7% → 58.3%
 - **주요 결과 1** SFT 후 모델이 인용 형식에 맞춰 존재하지 않는 판례를 생성: 인용 사건번호 19건 전부 가공
 - **주요 결과 2** DPO(44쌍)는 학습 쌍에서 선호 정확도 100%에 도달했지만 평가셋 정답률은 45.0%로 하락: 판례 내용보다 '전원합의체·판례 변경' 같은 형식적 단서에 맞춰져 가공 판례 인용이 19건 → 45건으로 증가 (자세한 내용은 아래 4. 결과, 5. 에러 분석과 한계)
+- **주요 결과 3 (v1.1)** chosen/rejected의 인용 형식을 맞추고 단서 문구를 지운 28쌍(검증용 6쌍 별도)으로 같은 설정의 DPO를 다시 학습: 정답률 하락이 사라졌고(같은 세션 SFT 58.3% → 58.3%, v1.0은 45.0%), '전원합의체' 언급 급증(6 → 45건)도 7 → 13건으로 줄었다. 다만 정답률 개선은 없었고 인용 판례는 여전히 전부 가공 (→ 4-4)
 
 ---
 
@@ -157,6 +158,35 @@ LLM 1차 생성 데이터를 조문·판례 원문(국가법령정보센터)과 
 
 학습 쌍 선호 정확도 100%(판례 변경·예외 모두), loss ≈ 0 → **44쌍에 과적합**. 보상 마진 8.24는 β=0.1 기준 레퍼런스 대비 log-확률 차이가 약 82에 달할 만큼 정책이 멀리 이동했다는 뜻이다.
 
+### 4-4. DPO v1.1: 형식 단서를 제거한 재실험
+
+v1.0의 원인(chosen에만 '전원합의체', '판례 변경' 문구)을 데이터에서 제거하고, **하이퍼파라미터는 그대로**(β=0.1, lr 5e-5, 3 epochs) 두어 데이터 변경 효과만 비교했다. 같은 Colab 세션에서 SFT를 다시 학습(`sft_run2`)해 기준으로 삼았다. 노트북: `notebooks/colab_dpo_v11.ipynb`
+
+**데이터 변경** (`src/build_dpo_v11.py` → `data/legal_dpo_dataset_v11.jsonl`)
+- chosen에서 '전원합의체', 판례 변경 괄호, 종전·변경을 언급하는 문장을 삭제 → chosen/rejected 모두 "대법원 … 선고 … 판결: 요지" 형식. 차이는 적용한 판례와 결론에만 남김
+- 변환 후 단서 문구(`전원합의체|종전|변경|현재 판례|이전의`)가 남으면 빌드 실패
+- 예외 유형 10쌍은 제외: chosen만 판례를 인용하는 구조라 형식을 맞출 수 없음
+- 시드 판례 2건(6쌍)을 **학습에 쓰지 않는 검증용 쌍**으로 분리 → 학습 28쌍
+- 남은 차이: 평균 길이 chosen 239자 / rejected 167자
+
+| 구분 | SFT (v1.0 세션) | DPO v1.0 | SFT (v1.1 세션) | DPO v1.1 |
+|---|---:|---:|---:|---:|
+| 전체 정답률 | 58.3% | 45.0% | 58.3% | **58.3%** |
+| 균형 정답률 | 56.0% | 44.4% | 56.5% | 56.2% |
+| Precedent Conflict (10문항) | 40% | 20% | 40% | 50% |
+| 형식 준수율 | 98.3% | 88.3% | 98.3% | 96.7% |
+| '전원합의체' 언급 응답 | 6 | **45** | 7 | 13 |
+| 인용 사건번호(전부 가공) | 19 | **45** | 17 | 14 |
+| 학습 쌍 선호 정확도 | – | 100% | – | 100% |
+| **검증용 쌍 선호 정확도** | – | (측정 안 함) | – | **83.3% (5/6)** |
+
+**해석**
+- 형식 단서를 지우자 v1.0의 부작용(정답률 하락, 가공 '전원합의체' 판결 남발)이 사라졌다. v1.0의 하락이 데이터 설계 때문이었다는 해석과 맞는다.
+- 학습에 쓰지 않은 판례의 쌍도 5/6을 맞혀, 선호 자체는 어느 정도 일반화되었다(1 epoch 후부터 83.3%로 유지).
+- 그러나 평가셋 정답률은 그대로다. SFT 대비 7문항이 맞게, 7문항이 틀리게 바뀌어 순변화 0이고, SFT를 같은 설정으로 다시 학습하는 것만으로도 4문항이 바뀐다. 판례 변경 유형 +1문항(40 → 50%)은 이 변동 범위 안이다.
+- 인용 판례는 여전히 전부 가공이다. 선호 학습으로 "어느 판례를 따를지"는 조정할 수 있어도, 모델이 모르는 판례를 정확히 인용하게 만들지는 못한다 → 추론 시 원문 검색(RAG)이 필요하다는 5-2의 결론을 유지한다.
+- 학습 loss는 여전히 0.003까지 내려가 28쌍을 외웠다. 검증 정확도가 1 epoch 이후 변하지 않았으므로 1 epoch로 충분했다.
+
 ## 5. 에러 분석과 한계
 
 ### 5-1. SFT 모델의 오류 패턴 ([docs/error_analysis.md](docs/error_analysis.md))
@@ -184,7 +214,7 @@ SFT : [대전제] 민법 제109조 제2항: "② 당사자가 궁박, 경솔 또
 | 형식은 배우고 근거는 지어냄 | **검색 증강(RAG)**: 추론 시 국가법령정보 API에서 조문·판결요지를 검색해 [대전제]에 주입 (데이터 설계와 같은 원칙) |
 | 가공 판례를 자신 있게 인용 | **DPO 확장**: 가공 인용 응답(이번 SFT 출력)을 rejected, 실재 인용 응답을 chosen으로 하는 쌍 추가 |
 | 정답률만으로 환각을 못 봄 | **인용 실재성·근거 일치율**을 1차 지표로 사용 (`evaluate.py --citations`) |
-| DPO 과적합·형식적 단서 학습 | β 상향(0.1 → 0.3~0.5)·epoch 축소·조기 종료, **학습에 쓰지 않은 검증용 선호 쌍**으로 모니터링, chosen/rejected가 같은 인용 형식을 갖도록 쌍 재설계(차이를 '판례 내용'에만 두기) |
+| DPO 과적합·형식적 단서 학습 | **v1.1에서 적용**: 쌍 재설계(같은 인용 형식) + 검증용 쌍 모니터링 → 부작용은 사라졌으나 개선 없음(4-4). 남은 과제: 길이 차이 보정, epoch 축소(1 epoch), 효용이 같은 쌍(tie)을 섞는 정규화 |
 | 예외·판례 변경 유형 개선 없음 | 1.5B·소규모 데이터의 한계. 원문 검색 증강(RAG)과 결합, 더 큰 모델에서 재평가 |
 
 ### 5-3. 데이터 구축·평가 과정에서 발견한 오류
@@ -203,7 +233,7 @@ SFT : [대전제] 민법 제109조 제2항: "② 당사자가 궁박, 경솔 또
 - **인용 검사 범위**: 조문은 조·항의 *존재 여부*만 검사하며, 실재 조문을 인용하면서 내용을 틀리게 쓴 경우는 잡지 못한다.
 - **판례 변경 범위**: 원문 문구로 확정한 IP 분야 15건. 법 개정으로 판례가 의미를 잃은 경우(예: 2012다11310 → 현행 특허법 제99조의2)는 예외 유형으로 일부만 포함.
 - **민법 비중**: 수집 판례 중 민법 판례는 IP와 관련이 적은 최신 사건이 많아 조문 중심으로 구성.
-- **DPO 규모**: 44쌍·단일 하이퍼파라미터(β=0.1) 1회 실험. 과적합 원인을 β·epoch 조정으로 분리 검증하지는 못했다.
+- **DPO 규모**: v1.0 44쌍, v1.1 28쌍(검증 6쌍), 하이퍼파라미터 β=0.1 하나, 각 1회 실험. 같은 설정의 SFT 재학습만으로 4문항이 바뀌므로, 1~2문항 차이는 결론으로 삼지 않는다.
 
 ## 6. 재현 방법
 
@@ -220,6 +250,9 @@ python src/train_dpo.py --sft_adapter outputs/qwen2.5-1.5b-legal-lora
 python src/evaluate.py --name dpo --merge_adapter outputs/qwen2.5-1.5b-legal-lora --adapter outputs/qwen2.5-1.5b-legal-dpo-lora
 python src/evaluate.py --report base sft dpo
 python src/evaluate.py --citations base sft dpo  # 인용 실재성(환각) 검사
+# v1.1 재실험 (Colab: notebooks/colab_dpo_v11.ipynb)
+python src/build_dpo_v11.py
+python src/train_dpo.py --data data/legal_dpo_dataset_v11.jsonl --out outputs/qwen2.5-1.5b-legal-dpo-v11-lora --log results/dpo_v11_train_log.json
 ```
 
 ## 7. 저작권
@@ -228,7 +261,7 @@ python src/evaluate.py --citations base sft dpo  # 인용 실재성(환각) 검�
   - 조문(특허법·상표법·민법): 제1호 "헌법·법률·조약·명령·조례 및 규칙"
   - 대법원 판결·결정: 제3호 "법원의 판결·결정·명령 및 심판이나 행정심판절차 그 밖에 이와 유사한 절차에 의한 의결·결정 등"
 - 교재·문제집 등 저작권 보호 대상 텍스트는 포함하지 않았으며, 모든 문항은 조문·판결 원문에 근거한다.
-- 코드: MIT License · 구축 데이터(문항·DPO 쌍): CC BY 4.0
+- 코드: MIT License · 가공 데이터(문항·DPO 쌍): CC BY 4.0
 
 ## 8. 디렉터리
 
@@ -241,7 +274,8 @@ python src/evaluate.py --citations base sft dpo  # 인용 실재성(환각) 검�
 │   ├── build_dataset.py        # 원문 삽입·사건번호 대조·누수 검사 → 최종 데이터셋
 │   ├── prompting.py            # 학습·평가 공통 시스템 프롬프트, O/X 파서
 │   ├── train_sft.py            # Qwen2.5-1.5B LoRA SFT
-│   ├── train_dpo.py            # SFT 모델 위 LoRA DPO (손실 직접 구현)
+│   ├── train_dpo.py            # SFT 모델 위 LoRA DPO (손실 직접 구현, 검증용 쌍 선호 정확도)
+│   ├── build_dpo_v11.py        # v1.1: 형식 단서를 제거한 선호 쌍 생성·검사
 │   └── evaluate.py             # SFT 전후 정답률 비교
 ├── prompts/                    # 생성 프롬프트 (system / sft / dpo / eval)
 ├── data/
@@ -249,6 +283,7 @@ python src/evaluate.py --citations base sft dpo  # 인용 실재성(환각) 검�
 │   ├── generated/              # LLM 1차 생성 결과 (*_raw.jsonl)
 │   ├── legal_sft_dataset.jsonl # 법률 삼단논법 CoT: [대전제: 조문]→[소전제: 사안]→[결론]
 │   ├── legal_dpo_dataset.jsonl # 판례 변경 반영 chosen / 종전 판례 rejected
+│   ├── legal_dpo_dataset_v11.jsonl # v1.1: 같은 인용 형식, train/val 분리
 │   ├── eval_set.jsonl          # 학습에 쓰지 않은 60문항 (판례 변경 문항 포함)
 │   ├── case_seeds.json         # 수집 대상 판례 후보
 │   ├── generation_plan.json    # 생성 계획(원천-유형-문항 수)
@@ -256,6 +291,7 @@ python src/evaluate.py --citations base sft dpo  # 인용 실재성(환각) 검�
 │   └── review/                 # 검수 시트(전체) / 검수 기록(review_sheet_reviewed.csv)
 ├── docs/review_guideline.md    # 검수 기준
 ├── docs/error_analysis.md      # SFT 모델 오류 분석
-├── notebooks/colab_train_eval.ipynb
+├── notebooks/colab_train_eval.ipynb   # v1.0 전체 실행
+├── notebooks/colab_dpo_v11.ipynb      # v1.1 재실험
 └── results/                    # 평가 결과: metrics_*, predictions_*, citation_check.json, train_log.json
 ```

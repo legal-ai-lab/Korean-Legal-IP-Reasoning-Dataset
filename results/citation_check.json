@@ -28,5 +28,25 @@
   "fabricated_articles": 50,
   "fabricated_article_rate": 84.7,
   "gold_case_cited": "0/34"
+ },
+ "sft_run2": {
+  "responses_citing_case": 17,
+  "cited_cases": 17,
+  "fabricated_cases": 17,
+  "fabricated_case_rate": 100.0,
+  "cited_articles": 56,
+  "fabricated_articles": 45,
+  "fabricated_article_rate": 80.4,
+  "gold_case_cited": "0/34"
+ },
+ "dpo_v11": {
+  "responses_citing_case": 14,
+  "cited_cases": 14,
+  "fabricated_cases": 14,
+  "fabricated_case_rate": 100.0,
+  "cited_articles": 59,
+  "fabricated_articles": 50,
+  "fabricated_article_rate": 84.7,
+  "gold_case_cited": "0/34"
  }
 }
