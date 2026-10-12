@@ -11,6 +11,9 @@ SFT 모델 위에 DPO(Direct Preference Optimization)를 LoRA로 학습한다. (
 
 사용법:
     python src/train_dpo.py --sft_adapter outputs/qwen2.5-1.5b-legal-lora
+    # v1.1: 형식 단서를 제거한 쌍 + 검증용 쌍(split=val)으로 과적합 확인
+    python src/train_dpo.py --data data/legal_dpo_dataset_v11.jsonl --beta 0.3 --epochs 2 \
+        --out outputs/qwen2.5-1.5b-legal-dpo-v11-lora --log results/dpo_v11_train_log.json
 """
 import argparse
 import json
@@ -75,6 +78,7 @@ def main():
     ap.add_argument("--max_len", type=int, default=1024)
     ap.add_argument("--lora_r", type=int, default=16)
     ap.add_argument("--seed", type=int, default=42)
+    ap.add_argument("--log", default=str(ROOT / "results/dpo_train_log.json"))
     args = ap.parse_args()
     set_seed(args.seed)
 
@@ -82,9 +86,11 @@ def main():
     if tok.pad_token is None:
         tok.pad_token = tok.eos_token
     rows = [json.loads(l) for l in open(args.data, encoding="utf-8")]
-    pairs = [(encode(tok, r["prompt"], r["chosen"], args.max_len),
-              encode(tok, r["prompt"], r["rejected"], args.max_len), r["category"]) for r in rows]
-    print(f"[data] {len(pairs)} pairs")
+    enc = lambda rs: [(encode(tok, r["prompt"], r["chosen"], args.max_len),
+                       encode(tok, r["prompt"], r["rejected"], args.max_len), r["category"]) for r in rs]
+    pairs = enc([r for r in rows if r.get("split", "train") == "train"])
+    val_pairs = enc([r for r in rows if r.get("split") == "val"])   # 학습에 쓰지 않는 검증용 쌍
+    print(f"[data] train {len(pairs)} pairs, val {len(val_pairs)} pairs")
 
     # 1) 기준 정책: base + SFT LoRA 병합
     model = load_model(args.model)
@@ -93,12 +99,30 @@ def main():
     model.eval()
 
     # 2) 기준 log-prob 사전 계산 (학습 중 고정)
-    ref = []
-    with torch.no_grad():
-        for c, r, _ in pairs:
-            lp = seq_logps(model, [c, r], tok.pad_token_id)
-            ref.append((lp[0].item(), lp[1].item()))
+    def ref_logps(ps):
+        out = []
+        with torch.no_grad():
+            for c, r, _ in ps:
+                lp = seq_logps(model, [c, r], tok.pad_token_id)
+                out.append((lp[0].item(), lp[1].item()))
+        return out
+    ref, val_ref = ref_logps(pairs), ref_logps(val_pairs)
     print("[ref] reference log-probs computed")
+
+    def pref_acc(ps, refs):
+        """선호 정확도: (π_θ/π_ref) 기준으로 chosen을 rejected보다 높게 보는 쌍의 비율"""
+        if not ps:
+            return None
+        was_training = model.training
+        model.eval()
+        hit = []
+        with torch.no_grad():
+            for (c, r, _), (rc, rr) in zip(ps, refs):
+                lp = seq_logps(model, [c, r], tok.pad_token_id)
+                hit.append(((lp[0].item() - rc) - (lp[1].item() - rr)) > 0)
+        if was_training:
+            model.train()
+        return round(100 * sum(hit) / len(hit), 1)
 
     # 3) 학습 정책: 병합 모델 + 새 LoRA
     model.gradient_checkpointing_enable()
@@ -146,6 +170,10 @@ def main():
                 log.append(rec)
                 print(rec)
                 buf = []
+        val_acc = pref_acc(val_pairs, val_ref)
+        if val_acc is not None:
+            log.append({"epoch_end": ep + 1, "val_pref_acc": val_acc})
+            print(f"[epoch {ep + 1}] val pref acc (held-out pairs): {val_acc}%")
 
     # 4) 학습 후 선호 정확도(학습 쌍 기준, 유형별)
     model.eval()
@@ -161,8 +189,11 @@ def main():
     model.save_pretrained(args.out)
     tok.save_pretrained(args.out)
     (ROOT / "results").mkdir(exist_ok=True)
-    (ROOT / "results/dpo_train_log.json").write_text(json.dumps(
-        {"config": vars(args), "n_pairs": len(pairs), "steps": log, "train_pair_pref_acc": final},
+    val_final = pref_acc(val_pairs, val_ref)
+    print("[pref-acc on held-out val pairs]", val_final)
+    Path(args.log).write_text(json.dumps(
+        {"config": vars(args), "n_pairs": len(pairs), "n_val_pairs": len(val_pairs), "steps": log,
+         "train_pair_pref_acc": final, "val_pair_pref_acc": val_final},
         ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"[OK] DPO adapter -> {args.out}")
 

@@ -1,0 +1,24 @@
+{
+ "n_pairs": 34,
+ "n_train": 28,
+ "n_val": 6,
+ "val_seeds": [
+  "2012후4162",
+  "2014후768"
+ ],
+ "dropped_rule_precedent_exception": [
+  "dpo-exc-001",
+  "dpo-exc-002",
+  "dpo-exc-003",
+  "dpo-exc-004",
+  "dpo-exc-005",
+  "dpo-exc-006",
+  "dpo-exc-007",
+  "dpo-exc-008",
+  "dpo-exc-009",
+  "dpo-exc-010"
+ ],
+ "avg_len_chosen": 238,
+ "avg_len_rejected": 167,
+ "cue_words_checked": "전원합의체|종전|변경|현재 판례|이전의"
+}
